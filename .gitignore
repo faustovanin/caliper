@@ -1,25 +1,48 @@
-# Git Ignore file
-.idea/
-launch.json
+*.bak
 
-# No logs
-*.log
-/log
-
-# No html
+# Ignore any generated html files, but include the report html template
 *.html
 
-# No mac files
-.DS_Store
+!/packages/caliper-core/lib/manager/report/template/report.html
 
-# Limited npm runtime artifacts
-node_modules/*
-package-lock.json
-# until an npm project skeleton is not provided for the repo, we should ignore the user-generated root package.json
-/package.json
+# Ignore DS_Store files from Mac
+**.DS_Store
 
-**/__pycache__/**
+architecture.pptx
+output.log
+lerna-debug.log
 
-pkg
-bin
-.vscode
+.idea/
+**/node_modules/
+**/log/
+**/*.log
+
+# Ignore code coverage logs
+**/.nyc_output/
+**/coverage/
+
+# Ignore IDE files
+.vscode/
+
+# Website files
+.sass-cache/
+Gemfile.lock
+_site/
+
+# verdaccio files
+**/storage
+
+# pm2 files
+**/.pm2/
+
+# lerna log
+lerna-debug.log
+
+# contract address file
+**/*.address
+
+# Ignore data
+data/
+
+# Ignore temp test files
+temp/

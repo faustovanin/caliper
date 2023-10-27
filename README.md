@@ -1,40 +1,49 @@
-# Hyperledger Caliper Benchmarks
+# ![Hyperledger Caliper](https://wiki.hyperledger.org/download/attachments/2392434/Hyperledger_Caliper_Logo_Color.svg?version=1&modificationDate=1548883186000&api=v2)
 
-This repository contains sample benchmarks that may be used by Caliper, a blockchain performance benchmark framework. For more information on Caliper, please see the [Caliper main repository](https://github.com/hyperledger/caliper/)
+[![CI](https://github.com/hyperledger/caliper/actions/workflows/main.yml/badge.svg)](https://github.com/hyperledger/caliper/actions/workflows/main.yml)
+[![codecov](https://codecov.io/gh/hyperledger/caliper/branch/main/graph/badge.svg?token=rVFhTNrZBJ)](https://codecov.io/gh/hyperledger/caliper)
+[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/2381/badge)](https://bestpractices.coreinfrastructure.org/projects/2381)
+[![license](https://img.shields.io/badge/license-Apache%202.0-blue)](https://github.com/hyperledger/caliper/blob/main/LICENSE)
+[![node (scoped)](https://img.shields.io/node/v/@hyperledger/caliper-cli)](https://www.npmjs.com/package/@hyperledger/caliper-cli)
+[![npm (scoped)](https://img.shields.io/npm/v/@hyperledger/caliper-cli?label=version)](https://www.npmjs.com/package/@hyperledger/caliper-cli)
+[![npm](https://img.shields.io/npm/dt/@hyperledger/caliper-cli?label=npm%20downloads)](https://www.npmjs.com/package/@hyperledger/caliper-cli)
+[![Docker Pulls](https://img.shields.io/docker/pulls/hyperledger/caliper)](https://hub.docker.com/r/hyperledger/caliper)
+[![Discord.Chat](https://img.shields.io/badge/discord-caliper-red)](https://discord.com/channels/905194001349627914/941417677778473031)
+[![Mailing list](https://img.shields.io/badge/mailing%20list-caliper-blue)](https://lists.hyperledger.org/g/caliper/topics)
 
-Associated performance reports, based on running these benchmarks, are published to the [repository github pages](https://hyperledger.github.io/caliper-benchmarks/).
+Welcome to the Hyperledger Caliper project. Caliper is a blockchain performance benchmark framework, which allows users to test different blockchain solutions with predefined use cases, and get a set of performance test results.
 
-## Repository Branches
+Currently supported blockchain solutions:
 
-This repository has three branches:
+* [Hyperledger Besu](https://github.com/hyperledger/besu), utilizing the Ethereum adapter.
+* [Hyperledger Fabric v1.X, v2.X](https://github.com/hyperledger/fabric)
+* [Ethereum](https://github.com/ethereum/go-ethereum)
+* [FISCO BCOS](https://github.com/FISCO-BCOS/FISCO-BCOS)
 
-1. **main**. Contains sample benchmarks
-2. **reports**. Contains md files that are built and published to the `gh-pages` branch
-3. **gh-pages**. Contains the build output from the `reports` branch 
+Currently supported performance indicators:
+* Success rate
+* Transaction/Read throughput
+* Transaction/Read latency (minimum, maximum, average)
+* Resource consumption (CPU, Memory, Network IO, ...)
 
-## Main Branch Contents
+See the [PSWG white paper](https://www.hyperledger.org/resources/publications/blockchain-performance-metrics) to find out the definitions and corresponding measurement methods.
 
-The benchmarks contained within the master branch are split into three directories:
+For more information on using Caliper, please consult the [documentation site](https://hyperledger.github.io/caliper/)
 
-1. **benchmarks**. Comprises the test configuration and callback files. The test configuration files describe the benchmark test parameters and also reference the callback files that are executed by Caliper clients during the benchmark. The Benchmark folder contains the following subfolders:
-    - **api** Tests directed towards the API of a single target blockchain.
-	- **samples** Tests directed towards the native samples provided by target blockchain platforms.
-	- **scenario** Generic scenarios that are valid for all (supported) target blockchain platforms
-2. **networks**. Comprises sample blockchain networks that may be used as target systems under test (SUT) for benchmarking purposes.
-3. **src**. Comprises the source smart contract files that are deployed to the SUT and interacted with via the test callbacks located within the benchmarks folder. Each smart contract is held within its own folder, under the blockchain technology that the smart contract corresponds to.
+## Configuration and usage
+See the [related documentation page](https://hyperledger.github.io/caliper/).
 
-## Running a Benchmark
+## How to contact us
 
-To run any of the benchmarks present in this repository, it is required to have installed [Hyperledger Caliper]((https://github.com/hyperledger/caliper/)), which is the intended consumer of all the contained files.
+If you have any issues using Caliper that the documentation does not help you solve, please reach out to us through the following methods:
+* [Discord](https://discord.com/channels/905194001349627914/941417677778473031) Please feel free to contact us on Discord (instant messaging). We monitor the Caliper channels as closely as possible, but even if you don't have a problem that needs resolving, why not jump on and say hi ... we'd love to hear from you about your experiences and any new features you think we should work on.
+* [Issues](https://github.com/hyperledger/caliper/issues) Feel free to raise an issue if you are facing a Caliper related problem
 
-In general the steps are:
+Caliper interacts with multiple blockchain technologies and consequently it *might* be an issue with the underlying blockchain technology being interacted with. You can seek specific help on these technologies on the same Discord server such as the Fabric or Besu channels.
 
-1. Install the Caliper CLI - for details please see the [Caliper main repository](https://github.com/hyperledger/caliper/)
-2. Clone this repository
-3. Run a Caliper CLI command that targets one of the contained benchmarks.
+## How to contribute
 
-For detailed information about using this repo with hyperledger fabric see [Hyperledger Fabric Networks](./networks/fabric/README.md)
+We welcome contributions to the Caliper code base. Please see [Contributing](/CONTRIBUTING.md) for more information.
 
-## Extending the Documented Reports
-
-The documented reports are built automatically from the `reports` branch of this repository and subsequently hosted on the `gh-pages` branch; pull requests must be target the [`reports` branch](https://github.com/hyperledger/caliper-benchmarks/tree/reports) in order for any modifications to be built.
+## License
+Hyperledger Project source code files are made available under the Apache License, Version 2.0 (Apache-2.0), located in the [LICENSE](LICENSE) file. Hyperledger Project documentation files are made available under the Creative Commons Attribution 4.0 International License (CC-BY-4.0), available at http://creativecommons.org/licenses/by/4.0/.

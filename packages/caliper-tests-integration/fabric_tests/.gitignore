@@ -1,0 +1,4 @@
+**/*.log
+report.html
+fabric-samples
+vendor
