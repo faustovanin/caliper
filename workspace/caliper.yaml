@@ -1,0 +1,5 @@
+caliper:
+  fabric:
+    gateway:
+      usegateway: true
+      discovery: true

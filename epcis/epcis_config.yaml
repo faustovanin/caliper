@@ -1,0 +1,45 @@
+test:
+  workers:
+    number: 5
+  rounds:
+    - label: Add event.
+      txNumber: 100
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 5
+      workload:
+        module: addEvent.js
+    - label: Track event.
+      txNumber: 100
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 5
+      workload:
+        module: addTraceability.js
+    - label: Query event (simple).
+      txNumber: 100
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 5
+      workload:
+        module: queryEventSimple.js
+    - label: Query event (complex).
+      txNumber: 100
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 5
+      workload:
+        module: queryEventComplex.js
+    - label: Query traeability.
+      txNumber: 100
+      rateControl:
+          type: fixed-load
+          opts:
+            transactionLoad: 5
+      workload:
+        module: queryTraceability.js
+        
