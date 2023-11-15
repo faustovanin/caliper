@@ -17,7 +17,6 @@
         "node": ">=14.19.0",
         "npm": ">=7.24.2"
     },
-    "dependencies": {},
     "devDependencies": {
         "license-check-and-add": "2.3.6",
         "repolinter": "0.8.2"
@@ -83,5 +82,8 @@
         "packages/caliper-gui-dashboard",
         "packages/caliper-gui-server",
         "packages/generator-caliper"
-    ]
+    ],
+    "dependencies": {
+        "fabric-network": "^2.2.14"
+    }
 }

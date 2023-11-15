@@ -1,45 +1,52 @@
 test:
   workers:
-    number: 5
+    number: 20
   rounds:
+    - label: Add event hash.
+      txNumber: 100
+      rateControl:
+          type: fixed-rate
+          opts:
+            tps: 100
+      workload:
+        module: addEventHash.js
     - label: Add event.
       txNumber: 100
       rateControl:
-          type: fixed-load
+          type: fixed-rate
           opts:
-            transactionLoad: 5
+            tps: 100
       workload:
         module: addEvent.js
     - label: Track event.
       txNumber: 100
       rateControl:
-          type: fixed-load
+          type: fixed-rate
           opts:
-            transactionLoad: 5
+            tps: 100
       workload:
         module: addTraceability.js
     - label: Query event (simple).
       txNumber: 100
       rateControl:
-          type: fixed-load
+          type: fixed-rate
           opts:
-            transactionLoad: 5
+            tps: 500
       workload:
         module: queryEventSimple.js
     - label: Query event (complex).
       txNumber: 100
       rateControl:
-          type: fixed-load
+          type: fixed-rate
           opts:
-            transactionLoad: 5
+            tps: 500
       workload:
         module: queryEventComplex.js
     - label: Query traeability.
       txNumber: 100
       rateControl:
-          type: fixed-load
+          type: fixed-rate
           opts:
-            transactionLoad: 5
+            tps: 500
       workload:
         module: queryTraceability.js
-        
